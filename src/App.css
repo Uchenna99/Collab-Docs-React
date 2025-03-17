@@ -1,8 +1,12 @@
+@font-face {
+    font-family: Roboto;
+    src: url("./assets/Font/Roboto-VariableFont_wdth.ttf");
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Roboto;
 }
 
 
@@ -20,7 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 25px 0 15px;
     color: #1f1f1f;
     position: sticky;
     top: 0;
@@ -59,7 +63,7 @@ img.docs-img{
 
 
 .nav-mid{
-    width: 600px;
+    width: 650px;
     height: 46px;
     background-color: #f0f4f9;
     border-radius: 30px;
@@ -67,6 +71,10 @@ img.docs-img{
     align-items: center;
     padding: 0 10px;
     gap: 10px;
+}
+
+.nav-mid:focus-within{
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .search-icon-div{
@@ -77,6 +85,7 @@ img.docs-img{
     justify-content: center;
     align-items: center;
     transition: 300ms;
+    cursor: pointer;
 }
 
 .search-icon-div:hover{

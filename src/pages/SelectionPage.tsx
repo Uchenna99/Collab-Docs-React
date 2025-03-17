@@ -39,7 +39,16 @@ const SelectionPage = () => {
             </div>
         </div>
 
-        <div className="templates-section"></div>
+        <div className="templates-section">
+            <div className="templates-section-div">
+                <div className="templates-section-top">
+                    <p>Start a new document</p>
+                    <div className="templates-section-top-options"></div>
+                </div>
+
+                <div className="templates-section-docs"></div>
+            </div>
+        </div>
 
     </div>
     </>

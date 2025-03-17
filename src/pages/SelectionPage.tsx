@@ -4,7 +4,7 @@ import docs from "../assets/docs_2020q4_48dp.png"
 const SelectionPage = () => {
   return (
     <>
-    <div className="selection-page-cover"></div>
+    <div className="selection-page-cover">
         <div className="navbar">
             <div className="nav-left">
                 <div className="burger-div">
@@ -38,6 +38,10 @@ const SelectionPage = () => {
                 </div>
             </div>
         </div>
+
+        <div className="templates-section"></div>
+
+    </div>
     </>
   )
 }

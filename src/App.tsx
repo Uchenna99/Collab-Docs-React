@@ -1,12 +1,18 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import DocumentPage from './pages/DocumentPage'
+import SelectionPage from './pages/SelectionPage';
 
 function App() {
 
   return (
     <>
-      <h1>Docs</h1>
+      <Routes>
+        <Route path='/' element={<DocumentPage/>} />
+        <Route path='/select' element={<SelectionPage/>} />
+      </Routes>
     </>
   )
 }
 
-export default App
+export default App;

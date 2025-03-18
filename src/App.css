@@ -161,7 +161,7 @@ input.search-input{
 
 .templates-section{
     width: 100%;
-    height: 350px;
+    height: 320px;
     background-color: #f1f3f4;
     display: flex;
     justify-content: center;
@@ -171,19 +171,148 @@ input.search-input{
     width: 1150px;
     height: 100%;
     /* background-color: #1f1f1f; */
+    padding: 10px 0 5px;
 }
 
 .templates-section-top{
     width: 100%;
-    height: 40px;
-    background-color: aliceblue;
+    min-height: 40px;
+    /* background-color: aliceblue; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
 .templates-section-top-options{
     width: 250px;
     height: 100%;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.template-gallery-wrap{
+    width: fit-content;
+    height: 36px;
+    border-right: 1px solid rgb(218, 220, 224);
+}
+
+.template-gallery{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 6px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.template-gallery > p{
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #414549;
+}
+
+.template-gallery:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#up-down{
+    font-size: 22px;
+    color: #414549;
+}
+
+
+.three-dots-div{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.three-dots-div:hover{
+    background-color: rgba(0, 0, 0, .2);
+}
+
+
+
+
+.templates-section-docs{
+    width: 100%;
+    height: calc(100% - 40px);
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.document-card{
+    width: 150px;
+    height: 100%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.document-page{
+    width: 100%;
+    height: 75%;
+    border: 1px solid rgb(218, 220, 224);
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.document-page:hover{
+    border: 1px solid #0b57d0;
+}
+
+p#doc-name{
+    font-size: 14px;
+    color: #1f1f1f;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+p#doc-type{
+    font-size: 14px;
+    color: #414549;
+    font-weight: 300;
+    margin-left: 5px;
+}
+
+.blank-doc-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/* DOCUMENT PAGE */
+
+.document-page-wrap{
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.docs-navbar{
+    width: 100%;
+    height: 65px;
+    background-color: aqua;
 }

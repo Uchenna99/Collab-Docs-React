@@ -1,7 +1,12 @@
 import docs from "../assets/docs_2020q4_48dp.png"
+import { HiOutlineDotsVertical } from "react-icons/hi";
+import { HiOutlineChevronUpDown } from "react-icons/hi2";
+import blank from "../assets/docs-blank-googlecolors.png"
+import { useNavigate } from "react-router-dom";
 
 
 const SelectionPage = () => {
+    const navigte = useNavigate();
   return (
     <>
     <div className="selection-page-cover">
@@ -43,10 +48,34 @@ const SelectionPage = () => {
             <div className="templates-section-div">
                 <div className="templates-section-top">
                     <p>Start a new document</p>
-                    <div className="templates-section-top-options"></div>
+                    <div className="templates-section-top-options">
+                        <div className="template-gallery-wrap">
+                            <div className="template-gallery">
+                                <p>Template gallery</p>
+                                <HiOutlineChevronUpDown id="up-down"/>
+                            </div>
+                        </div>
+                        <div className="three-dots-div">
+                            <HiOutlineDotsVertical id="up-down"/>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="templates-section-docs"></div>
+                <div className="templates-section-docs">
+                    <div className="document-card">
+                        <div className="document-page" onClick={()=>navigte("/")}>
+                            <img className="blank-doc-img" src={blank} alt="" />
+                        </div>
+                        <p id="doc-name">Blank document</p>
+                        <p id="doc-type"></p>
+                    </div>
+
+                    <div className="document-card">
+                        <div className="document-page"></div>
+                        <p id="doc-name">Resume</p>
+                        <p id="doc-type">Serif</p>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -24,7 +24,19 @@ const DocumentPage = () => {
               <div className="container-bottom">
                 <div className="container-bottom-div"> <p>File</p> </div>
 
-                <div className="container-bottom-div"> <p>File</p> </div>
+                <div className="container-bottom-div"> <p>Edit</p> </div>
+
+                <div className="container-bottom-div"> <p>view</p> </div>
+
+                <div className="container-bottom-div"> <p>Insert</p> </div>
+
+                <div className="container-bottom-div"> <p>Format</p> </div>
+
+                <div className="container-bottom-div"> <p>Tools</p> </div>
+
+                <div className="container-bottom-div"> <p>Extensions</p> </div>
+
+                <div className="container-bottom-div"> <p>Help</p> </div>
               </div>
 
             </div>

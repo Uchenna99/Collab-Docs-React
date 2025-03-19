@@ -321,7 +321,7 @@ p#doc-type{
 }
 
 .docs-navbar-left{
-    width: 500px;
+    width: 470px;
     height: 100%;
     /* background-color: pink; */
     display: flex;
@@ -349,7 +349,7 @@ p#doc-type{
 
 .container-top{
     width: 100%;
-    height: 50%;
+    height: 45%;
     /* background-color: yellow; */
     display: flex;
 }
@@ -383,23 +383,28 @@ p#doc-type{
 
 .container-bottom{
     width: 100%;
-    height: 50%;
+    height: 55%;
     /* background-color: red; */
     display: flex;
 }
 
 .container-bottom-div{
     width: fit-content;
-    height: 100%;
-    background-color: rgb(218, 220, 224);
+    height: 24px;
     border-radius: 5px;
     padding: 0 8px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .container-bottom-div > p{
     font-size: 14px;
+    color: #414549;
+}
+
+.container-bottom-div:hover{
+    background-color: rgb(218, 220, 224);
 }
 
 

@@ -146,6 +146,66 @@ const DocumentPage = () => {
 
             <div className="divider"></div>
 
+            <div className="menu-group-one">
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-308, top:-446}} />
+                </div>
+              </div>
+
+              <div className="font-size-div">
+                <p>11</p>
+              </div>
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1604, top:-472}} />
+                </div>
+              </div>
+
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="menu-group-one">
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1534, top:-66}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1410, top:-786}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-660, top:-742}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder" style={{borderBottom:'4px solid black', height:18}}>
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-172, top:-23}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-46, top:-922}} />
+                </div>
+              </div>
+
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="menu-group-one"></div>
+
           </div>
         </div>
 

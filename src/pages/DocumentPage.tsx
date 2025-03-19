@@ -79,11 +79,18 @@ const DocumentPage = () => {
         <div className="menu-bar-section">
           <div className="menu-bar">
 
-            <div className="menu-group-one"></div>
+            <div className="menu-group-one">
+              <div className="menu-option-div">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="document-edit-section"></div>
+        <div className="document-edit-section">
+          <svg  viewBox="8.18 18.22 40 25.26"  style={{backgroundColor:'pink', height:1224,width:1938}}>
+          <path fill="red" d="M400 902q-.825 0-1.412-.587Q398 900.825 398 900v-9l5-5h9q.825 0 1.413.588.587.587.587 1.412v4.5l4-4v11l-4-4v4.5q0 .825-.587 1.413-.588.587-1.413.587Zm0-2h12v-12h-8l-4 4Z"/>
+          </svg>
+        </div>
       </div>
     </>
   )

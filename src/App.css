@@ -522,7 +522,7 @@ p#doc-type{
     display: flex;
     align-items: center;
     gap: 3px;
-    padding: 5px ;
+    padding: 5px 10px;
 }
 
 
@@ -531,4 +531,34 @@ p#doc-type{
     height: 100%;
     display: flex;
     gap: 2px;
+}
+
+.menu-option-div{
+    width: fit-content;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.menu-option-div:hover{
+    background-color: rgb(218, 220, 224);
+}
+
+
+
+
+
+
+
+
+
+
+
+.document-edit-section{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
 }

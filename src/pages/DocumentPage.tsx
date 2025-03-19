@@ -1,4 +1,7 @@
-
+import { LuHistory } from "react-icons/lu";
+import { MdOutlineComment } from "react-icons/md";
+import { BiVideo } from "react-icons/bi";
+import { MdArrowDropDown } from "react-icons/md";
 
 const DocumentPage = () => {
   return (
@@ -43,7 +46,29 @@ const DocumentPage = () => {
 
           </div>
 
-          <div className="docs-navbar-right"></div>
+          <div className="docs-navbar-right">
+
+            <div className="circle-hover">
+              <LuHistory id="nav-right-icons" style={{color:'#777'}} />
+            </div>
+
+            <div className="circle-hover">
+              <MdOutlineComment id="nav-right-icons" style={{}} />
+            </div>
+
+            <div className="video-icon-div">
+              <BiVideo id="nav-right-icons"/>
+              <MdArrowDropDown style={{color:'#414549'}} />
+            </div>
+
+            <div className="share-div">
+              <div className="share-div-text"> <p>Share</p> </div>
+              <div className="share-div-arrow">
+                <MdArrowDropDown style={{color:'#414549'}} />
+              </div>
+            </div>
+
+          </div>
 
         </div>
 

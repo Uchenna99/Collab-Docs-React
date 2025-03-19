@@ -15,10 +15,17 @@ const DocumentPage = () => {
                 <div className="doc-name">
                   <p>Untitled document</p>
                 </div>
-                <div className="online-status"></div>
+
+                <div className="online-status">
+                  <p>Working offline</p>
+                </div>
               </div>
 
-              <div className="container-bottom"></div>
+              <div className="container-bottom">
+                <div className="container-bottom-div"> <p>File</p> </div>
+
+                <div className="container-bottom-div"> <p>File</p> </div>
+              </div>
 
             </div>
 

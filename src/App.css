@@ -365,7 +365,7 @@ p#doc-type{
 
 .doc-name > p{
     font-size: 18px;
-    color: #777;
+    color: #444746;
 }
 
 .online-status{
@@ -401,12 +401,14 @@ p#doc-type{
 
 .container-bottom-div > p{
     font-size: 14px;
-    color: #414549;
+    color: #444746;
 }
 
 .container-bottom-div:hover{
     background-color: rgb(218, 220, 224);
 }
+
+
 
 
 
@@ -416,6 +418,7 @@ p#doc-type{
     /* background-color: pink; */
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 10px;
 }
 
@@ -435,7 +438,7 @@ p#doc-type{
 
 #nav-right-icons{
     font-size: 24px;
-    color: #414549;
+    color: #444746;
 }
 
 .video-icon-div{
@@ -516,7 +519,7 @@ p#doc-type{
 
 .menu-bar{
     width: 100%;
-    height: 45px;
+    height: 40px;
     background-color: #f0f4f9;
     border-radius: 30px;
     display: flex;
@@ -539,12 +542,39 @@ p#doc-type{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    padding: 0 8px;
+    padding: 0 6px;
     cursor: pointer;
 }
 
 .menu-option-div:hover{
-    background-color: rgb(218, 220, 224);
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.menu-option-div > p{
+    font-size: 14px;
+    color: #444746;
+}
+
+.icon-holder{
+    width: 20px;
+    height: 22px;
+    overflow: hidden;
+    position: relative;
+    /* background-color: #777; */
+    /* padding: 2px 0 0 2px; */
+}
+
+img#menu-svg{
+    position: absolute;
+}
+
+/* svg{
+    aspect-ratio: '16:10';
+} */
+
+#menu-icons{
+    font-size: 18px;
+    color: #444746;
 }
 
 
@@ -560,5 +590,4 @@ p#doc-type{
 .document-edit-section{
     width: 400px;
     height: 400px;
-    overflow: hidden;
 }

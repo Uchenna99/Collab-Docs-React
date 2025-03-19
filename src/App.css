@@ -552,7 +552,8 @@ p#doc-type{
 
 .menu-option-div > p{
     font-size: 14px;
-    color: #444746;
+    font-weight: 500;
+    color: #414549;
 }
 
 .icon-holder{
@@ -575,6 +576,12 @@ img#menu-svg{
 #menu-icons{
     font-size: 18px;
     color: #444746;
+}
+
+.divider{
+    width: 1px;
+    height: 20px;
+    background-color: lightgray;
 }
 
 

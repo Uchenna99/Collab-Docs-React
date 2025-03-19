@@ -128,7 +128,24 @@ const DocumentPage = () => {
 
             <div className="divider"></div>
 
-            <div className="group2"></div>
+            <div className="menu-group-one">
+              <div className="menu-option-div" style={{gap:10}}>
+                <p>Normal text</p>
+                <MdArrowDropDown />
+              </div>
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="menu-group-one">
+              <div className="menu-option-div" style={{gap:30}}>
+                <p>Arial</p>
+                <MdArrowDropDown />
+              </div>
+            </div>
+
+            <div className="divider"></div>
+
           </div>
         </div>
 

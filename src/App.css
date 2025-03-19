@@ -405,7 +405,7 @@ p#doc-type{
 }
 
 .container-bottom-div:hover{
-    background-color: rgb(218, 220, 224);
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
 
@@ -433,7 +433,7 @@ p#doc-type{
 }
 
 .circle-hover:hover{
-    background-color: rgb(218, 220, 224);
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
 #nav-right-icons{
@@ -454,7 +454,7 @@ p#doc-type{
 }
 
 .video-icon-div:hover{
-    background-color: rgb(218, 220, 224);
+    background-color: rgba(0, 0, 0, 0.07);
 }
 
 .share-div{
@@ -587,7 +587,7 @@ img#menu-svg{
 .font-size-div{
     width: fit-content;
     height: 100%;
-    border: 1px solid #444746;
+    border: 1px solid #777;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -598,6 +598,10 @@ img#menu-svg{
     font-size: 13px;
     font-weight: 500;
     color: #444746;
+}
+
+.font-size-div:hover{
+    border-color: black;
 }
 
 

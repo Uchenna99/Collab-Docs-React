@@ -204,7 +204,82 @@ const DocumentPage = () => {
 
             <div className="divider"></div>
 
-            <div className="menu-group-one"></div>
+            <div className="menu-group-one">
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1398, top:-624}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-150, top:-776}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-118, top:-848}} />
+                </div>
+              </div>
+
+            </div>
+
+            <div className="divider"></div>
+
+            <div className="menu-group-one">
+
+              <div className="menu-option-div" style={{padding:'0 0 0 4px'}}>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-812, top:-697}} />
+                </div>
+                <MdArrowDropDown />
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1734, top:-754}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-716, top:-468}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1774, top:-956}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-224, top:-496}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-86, top:-390}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1478, top:-858}} />
+                </div>
+              </div>
+
+              <div className="menu-option-div">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-1166, top:-20}} />
+                </div>
+              </div>
+
+            </div>
 
           </div>
         </div>

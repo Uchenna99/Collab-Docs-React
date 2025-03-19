@@ -68,11 +68,20 @@ const DocumentPage = () => {
               </div>
             </div>
 
+            <div className="profile-img-div">
+              <div className="profile-img"></div>
+            </div>
+
           </div>
 
         </div>
 
-        <div className="menu-bar"></div>
+        <div className="menu-bar-section">
+          <div className="menu-bar">
+
+            <div className="menu-group-one"></div>
+          </div>
+        </div>
 
         <div className="document-edit-section"></div>
       </div>

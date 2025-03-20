@@ -523,9 +523,18 @@ p#doc-type{
     background-color: #f0f4f9;
     border-radius: 30px;
     display: flex;
+    justify-content: space-between;
+    padding: 7px 10px;
+}
+
+.menu-bar-left{
+    width: fit-content;
+    height: 100%;
+    /* background-color: pink; */
+    border-radius: 30px;
+    display: flex;
     align-items: center;
     gap: 3px;
-    padding: 7px 10px;
 }
 
 
@@ -602,6 +611,16 @@ img#menu-svg{
 
 .font-size-div:hover{
     border-color: black;
+}
+
+
+.menu-bar-right{
+    width: fit-content;
+    height: 100%;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    gap: 3px;
 }
 
 

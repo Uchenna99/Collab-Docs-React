@@ -731,6 +731,12 @@ img#menu-svg{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-left: 15px;
+}
+
+.doc-tabs > p{
+    font-size: 14px;
+    color: #444746;
 }
 
 

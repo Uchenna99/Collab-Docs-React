@@ -327,15 +327,26 @@ const DocumentPage = () => {
                 ))
               }
             </div>
+
             <div className="editing-section">
               <div className="editing-sheets-div">
                 <div className="editing-canvas"></div>
               </div>
             </div>
+
+            <div className="tab-section">
+              <div className="circle-hover">
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-330, top:0}} />
+                </div>
+              </div>
+
+              <div className="doc-tabs"></div>
+            </div>
+
           </div>
         </div>
 
-        <div className="tab-section"></div>
       </div>
     </>
   )

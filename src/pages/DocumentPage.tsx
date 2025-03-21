@@ -211,9 +211,9 @@ const DocumentPage = () => {
 
               </div>
 
-              <div className="divider"></div>
+              <div className="divider res-2"></div>
 
-              <div className="menu-group-one">
+              <div className="menu-group-one res-2">
 
                 <div className="menu-option-div">
                   <div className="icon-holder">
@@ -235,9 +235,9 @@ const DocumentPage = () => {
 
               </div>
 
-              <div className="divider"></div>
+              <div className="divider res-1"></div>
 
-              <div className="menu-group-one">
+              <div className="menu-group-one res-1">
 
                 <div className="menu-option-div" style={{padding:'0 0 0 4px'}}>
                   <div className="icon-holder">
@@ -314,21 +314,28 @@ const DocumentPage = () => {
         </div>
 
         <div className="document-edit-section">
-          <div className="editing-section">
-            <div className="editing-sheets-div">
-              <div className="editing-canvas"></div>
-              <div className="ruler">
-                {Array.from({length:12}, (_,i)=>(
-                  <span key={i}>{i+1}</span>
-                ))}
-                {
-                  Array.from({length})
-                }
-                <div className="rule"></div>
+          <div className="editing-section-wrap">
+            <div className="ruler">
+              {/* {Array.from({length:12}, (_,i)=>(
+                <span key={i}>{i+1}</span>
+              ))} */}
+              {
+                Array.from({length: 91}, (_,i)=>(
+                  <div key={i} className="rule"
+                    style={{height: i % 4 === 0? 8:4}}
+                  ></div>
+                ))
+              }
+            </div>
+            <div className="editing-section">
+              <div className="editing-sheets-div">
+                <div className="editing-canvas"></div>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="tab-section"></div>
       </div>
     </>
   )

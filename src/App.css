@@ -317,6 +317,7 @@ p#doc-type{
     /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
 }
 
@@ -636,8 +637,19 @@ img#menu-svg{
 .document-edit-section{
     width: 100%;
     height: calc(100vh - 105px);
-    /* background-color: pink; */
+    background-color: white;
     padding: 25px 20px 0 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.editing-section-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .editing-section{
@@ -682,16 +694,50 @@ img#menu-svg{
 }
 
 .ruler{
-    width: 100%;
-    height: 30px;
+    width: 794px;
+    height: 10px;
     display: flex;
-    justify-content: space-between;
-    background-color: white;
+    align-items: end;
+    gap: 8px;
+    /* background-color: red; */
+    position: absolute;
+    top: -10px;
+    /* z-index: 10; */
 }
 
 .rule{
     width: 0;
-    height: 8px;
+    height: 5px;
     border-left: 1px solid gray;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+
+@media screen and (max-width: 1399px) {
+    .res-1{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 1099px) {
+    .res-2{
+        display: none;
+    }
+    
+}

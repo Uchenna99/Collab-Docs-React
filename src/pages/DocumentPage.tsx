@@ -317,6 +317,13 @@ const DocumentPage = () => {
           <div className="editing-section">
             <div className="editing-sheets-div">
               <div className="editing-canvas"></div>
+              <div className="ruler">
+                {Array.from({length:12}, (_,i)=>(
+                  <span key={i}>{i+1}</span>
+                ))}
+                <div className="one"></div>
+                <div className="two"></div>
+              </div>
             </div>
           </div>
         </div>

@@ -677,5 +677,24 @@ img#menu-svg{
 .editing-canvas{
     width: 100%;
     height: 1123px;
+    /* background-color: gray; */
     border: 1px solid lightgray;
+}
+
+.ruler{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.one{
+    width: 0;
+    height: 8px;
+    border-left: 1px solid gray;
+}
+.two{
+    width: 1px;
+    height: 4px;
 }

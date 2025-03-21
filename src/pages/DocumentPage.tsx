@@ -341,7 +341,12 @@ const DocumentPage = () => {
                 </div>
               </div>
 
-              <div className="doc-tabs"></div>
+              <div className="doc-tabs">
+                <p>Document tabs</p>
+                <div className="icon-holder">
+                  <img id="menu-svg" src={svgIcons} alt="" style={{left:-356, top:-422}} />
+                </div>
+              </div>
             </div>
 
           </div>

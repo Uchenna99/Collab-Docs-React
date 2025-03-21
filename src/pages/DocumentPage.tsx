@@ -321,8 +321,10 @@ const DocumentPage = () => {
                 {Array.from({length:12}, (_,i)=>(
                   <span key={i}>{i+1}</span>
                 ))}
-                <div className="one"></div>
-                <div className="two"></div>
+                {
+                  Array.from({length})
+                }
+                <div className="rule"></div>
               </div>
             </div>
           </div>

@@ -689,12 +689,9 @@ img#menu-svg{
     background-color: white;
 }
 
-.one{
+.rule{
     width: 0;
     height: 8px;
     border-left: 1px solid gray;
 }
-.two{
-    width: 1px;
-    height: 4px;
-}
+

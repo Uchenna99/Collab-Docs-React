@@ -4,8 +4,19 @@ import { MdArrowDropDown } from "react-icons/md";
 import { MdOutlineSearch } from "react-icons/md";
 import svgIcons from "../assets/material_common_sprite794_gm3_grey_medium.svg"
 import { HiOutlineChevronUp } from "react-icons/hi2";
+import { useEffect, useState } from "react";
+import useSocket from "../config/UseWebSocket";
 
 const DocumentPage = () => {
+  const {sendMessage, messages} = useSocket();
+  const [docText, setDocText] = useState('');
+  const [fontSize, setFontSize] = useState(16);
+
+  useEffect(()=>{
+    setDocText(messages);
+  },[messages]);
+
+
   return (
     <>
       <div className="document-page-wrap">
@@ -157,17 +168,17 @@ const DocumentPage = () => {
 
               <div className="menu-group-one">
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setFontSize(fontSize-1)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-308, top:-446}} />
                   </div>
                 </div>
 
                 <div className="font-size-div">
-                  <p>11</p>
+                  <p>{fontSize}</p>
                 </div>
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setFontSize(fontSize+1)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-1604, top:-472}} />
                   </div>
@@ -331,7 +342,13 @@ const DocumentPage = () => {
             <div className="editing-section">
               <div className="editing-sheets-div">
                 <div className="editing-canvas">
-                  <textarea id="t-area"/>
+                  <textarea id="t-area" style={{fontSize: fontSize}}
+                    value={docText}
+                    onChange={(e)=>{
+                      setDocText(e.target.value);
+                      sendMessage(e.target.value);
+                    }}
+                  />
                 </div>
               </div>
             </div>

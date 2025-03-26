@@ -330,7 +330,9 @@ const DocumentPage = () => {
 
             <div className="editing-section">
               <div className="editing-sheets-div">
-                <div className="editing-canvas"></div>
+                <div className="editing-canvas">
+                  <textarea id="t-area"/>
+                </div>
               </div>
             </div>
 

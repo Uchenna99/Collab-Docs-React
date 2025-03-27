@@ -6,15 +6,22 @@ import svgIcons from "../assets/material_common_sprite794_gm3_grey_medium.svg"
 import { HiOutlineChevronUp } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import useSocket from "../config/UseWebSocket";
+import axios from "axios";
 
 const DocumentPage = () => {
   const {sendMessage, messages} = useSocket();
   const [docText, setDocText] = useState('');
   const [fontSize, setFontSize] = useState(16);
+  const [bold, setBold] = useState(false);
+  const [italic, setItalic] = useState(false);
 
   useEffect(()=>{
     setDocText(messages);
   },[messages]);
+
+  const handleSave = async ()=>{
+    await axios.post(``)
+  };
 
 
   return (
@@ -38,7 +45,28 @@ const DocumentPage = () => {
               </div>
 
               <div className="container-bottom">
-                <div className="container-bottom-div"> <p>File</p> </div>
+                <div className="container-bottom-div">
+                  <p>File</p>
+                  <div className="file-drop-down">
+                    <div className="file-drop-down-option">
+                      <div className="sub-menu-icon">
+                        <div className="icon-holder">
+                          {/* <img id="menu-svg" src={svgIcons} alt="" style={{left:-750, top:-20}} /> */}
+                        </div>
+                        <p>New</p>
+                      </div>
+                      <p id="sub-menu-arrow">►</p>
+                    </div>
+                    <div className="file-drop-down-option" onClick={handleSave}>
+                      <div className="sub-menu-icon">
+                        <div className="icon-holder">
+                          {/* <img id="menu-svg" src={svgIcons} alt="" style={{left:-750, top:-20}} /> */}
+                        </div>
+                        <p>Save</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="container-bottom-div"> <p>Edit</p> </div>
 
@@ -190,13 +218,13 @@ const DocumentPage = () => {
 
               <div className="menu-group-one">
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setBold(!bold)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-1534, top:-66}} />
                   </div>
                 </div>
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setItalic(!italic)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-1410, top:-786}} />
                   </div>
@@ -342,7 +370,10 @@ const DocumentPage = () => {
             <div className="editing-section">
               <div className="editing-sheets-div">
                 <div className="editing-canvas">
-                  <textarea id="t-area" style={{fontSize: fontSize}}
+                  <textarea id="t-area" style={{
+                    fontSize: fontSize, fontWeight: bold? 600 : 400,
+                    fontStyle: italic? 'italic':''
+                  }}
                     value={docText}
                     onChange={(e)=>{
                       setDocText(e.target.value);

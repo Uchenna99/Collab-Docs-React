@@ -358,13 +358,22 @@ p#doc-type{
 .doc-name{
     width: 180px;
     height: 100%;
-    /* background-color: #0b57d0; */
+    /* background-color: bisque; */
     display: flex;
     align-items: center;
     padding-left: 8px;
 }
 
 .doc-name > p{
+    font-size: 18px;
+    color: #444746;
+}
+
+#title-input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
     font-size: 18px;
     color: #444746;
 }

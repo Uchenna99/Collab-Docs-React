@@ -5,22 +5,35 @@ import { MdOutlineSearch } from "react-icons/md";
 import svgIcons from "../assets/material_common_sprite794_gm3_grey_medium.svg"
 import { HiOutlineChevronUp } from "react-icons/hi2";
 import { useEffect, useState } from "react";
-import useSocket from "../config/UseWebSocket";
+import useSocket, { userURL } from "../config/UseWebSocket";
 import axios from "axios";
+
+interface SaveDTO {
+  title: string;
+  content: string;
+  userId: string;
+}
 
 const DocumentPage = () => {
   const {sendMessage, messages} = useSocket();
   const [docText, setDocText] = useState('');
+  const [docTitle, setDocTitle] = useState('Untitled document');
   const [fontSize, setFontSize] = useState(16);
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
+
+  const saveDoc: SaveDTO = {
+    title: docText,
+     content: docText,
+     userId: ''
+  }
 
   useEffect(()=>{
     setDocText(messages);
   },[messages]);
 
   const handleSave = async ()=>{
-    await axios.post(``)
+    await axios.post(`${userURL}/create-document`, )
   };
 
 
@@ -36,7 +49,9 @@ const DocumentPage = () => {
 
               <div className="container-top">
                 <div className="doc-name">
-                  <p>Untitled document</p>
+                  <input id="title-input" type="text" value={docTitle} 
+                    onChange={(e)=> setDocTitle(e.target.value)}
+                  />
                 </div>
 
                 <div className="online-status">

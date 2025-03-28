@@ -5,16 +5,76 @@ import { MdOutlineSearch } from "react-icons/md";
 import svgIcons from "../assets/material_common_sprite794_gm3_grey_medium.svg"
 import { HiOutlineChevronUp } from "react-icons/hi2";
 import { useEffect, useState } from "react";
-import useSocket from "../config/UseWebSocket";
+import useSocket, { userURL } from "../config/UseWebSocket";
+import axios from "axios";
+import { MdOutlineStarOutline } from "react-icons/md";
+import { IoCloudDoneOutline } from "react-icons/io5";
+import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
+
+interface SaveDTO {
+  title: string;
+  content: string;
+  userId: string;
+}
 
 const DocumentPage = () => {
+  const navigate = useNavigate();
   const {sendMessage, messages} = useSocket();
   const [docText, setDocText] = useState('');
+  const [docTitle, setDocTitle] = useState('Untitled document');
   const [fontSize, setFontSize] = useState(16);
+  const [bold, setBold] = useState(false);
+  const [italic, setItalic] = useState(false);
+  const [fileMenu, setFileMenu] = useState(false);
+  const [saving, setSaving] = useState('null');
+  // const [user, setUser] = useState<UserDecode|null>(null);
+
+  interface UserDecode {
+    iat: number;
+    id: string;
+    name: string;
+  }
+
+  let userID = '';
+  
+  useEffect(()=>{
+    const user = localStorage.getItem('collabDocsUser');
+    if(user) {
+      const decode: UserDecode = jwtDecode(user);
+      userID = decode.id;
+    }else{navigate('/login')}
+  },[]);
 
   useEffect(()=>{
     setDocText(messages);
   },[messages]);
+  
+  const saveDoc: SaveDTO = {
+    title: docTitle,
+    content: docText,
+    userId: userID
+  }
+  
+
+  const handleSave = async ()=>{
+    setSaving('saving');
+    await axios.post(`${userURL}/create-document`, saveDoc)
+    .then(()=>{
+      setSaving('saved');
+      setTimeout(() => {
+        setSaving('null');
+        
+      }, 2000);
+    })
+    .catch(()=>{
+      setSaving('failed');
+      setTimeout(() => {
+        setSaving('null');
+        
+      }, 2000);
+    })
+  };
 
 
   return (
@@ -29,16 +89,61 @@ const DocumentPage = () => {
 
               <div className="container-top">
                 <div className="doc-name">
-                  <p>Untitled document</p>
+                  <input id="title-input" type="text" value={docTitle} 
+                    onChange={(e)=> setDocTitle(e.target.value)}
+                  />
                 </div>
 
-                <div className="online-status">
-                  <p>Working offline</p>
+                <div className="circle-hover" style={{width:30, height:30}}>
+                  <MdOutlineStarOutline />
+                </div>
+
+                {/* <div className="circle-hover" style={{width:30, height:30}}>
+                  <div className="icon-holder">
+                    <img id="menu-svg" src={svgIcons} alt="" style={{left:-590, top:-307}} />
+                  </div>
+                </div> */}
+
+                <div className="circle-hover" style={{width:30, height:30}}>
+                  <IoCloudDoneOutline />
+                </div>
+
+                <div className="online-status" style={{display: saving==='saving'? 'flex':'none'}}>
+                  <p>Saving...</p>
+                </div>
+                <div className="online-status" style={{display: saving==='saved'? 'flex':'none'}}>
+                  <p>Saved</p>
+                </div>
+                <div className="online-status" style={{display: saving==='failed'? 'flex':'none'}}>
+                  <p>Save failed</p>
                 </div>
               </div>
 
               <div className="container-bottom">
-                <div className="container-bottom-div"> <p>File</p> </div>
+
+                <div className="container-bottom-div" onClick={()=> setFileMenu(!fileMenu)}>
+                  <p>File</p>
+
+                  <div className="file-drop-down" style={{display: fileMenu? 'block':'none'}}>
+                    <div className="file-drop-down-option">
+                      <div className="sub-menu-icon">
+                        <div className="icon-holder">
+                          {/* <img id="menu-svg" src={svgIcons} alt="" style={{left:-750, top:-20}} /> */}
+                        </div>
+                        <p>New</p>
+                      </div>
+                      {/* <p id="sub-menu-arrow">►</p> */}
+                    </div>
+                    <div className="file-drop-down-option" onClick={handleSave}>
+                      <div className="sub-menu-icon">
+                        <div className="icon-holder">
+                          {/* <img id="menu-svg" src={svgIcons} alt="" style={{left:-750, top:-20}} /> */}
+                        </div>
+                        <p>Save</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="container-bottom-div"> <p>Edit</p> </div>
 
@@ -190,13 +295,13 @@ const DocumentPage = () => {
 
               <div className="menu-group-one">
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setBold(!bold)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-1534, top:-66}} />
                   </div>
                 </div>
 
-                <div className="menu-option-div" style={{padding:'0 4px'}}>
+                <div className="menu-option-div" style={{padding:'0 4px'}} onClick={()=> setItalic(!italic)}>
                   <div className="icon-holder">
                     <img id="menu-svg" src={svgIcons} alt="" style={{left:-1410, top:-786}} />
                   </div>
@@ -342,7 +447,10 @@ const DocumentPage = () => {
             <div className="editing-section">
               <div className="editing-sheets-div">
                 <div className="editing-canvas">
-                  <textarea id="t-area" style={{fontSize: fontSize}}
+                  <textarea id="t-area" style={{
+                    fontSize: fontSize, fontWeight: bold? 600 : 400,
+                    fontStyle: italic? 'italic':''
+                  }}
                     value={docText}
                     onChange={(e)=>{
                       setDocText(e.target.value);

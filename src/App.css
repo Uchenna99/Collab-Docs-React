@@ -353,18 +353,29 @@ p#doc-type{
     height: 45%;
     /* background-color: yellow; */
     display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .doc-name{
     width: 180px;
     height: 100%;
-    /* background-color: #0b57d0; */
+    /* background-color: bisque; */
     display: flex;
     align-items: center;
     padding-left: 8px;
 }
 
 .doc-name > p{
+    font-size: 18px;
+    color: #444746;
+}
+
+#title-input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
     font-size: 18px;
     color: #444746;
 }
@@ -398,6 +409,7 @@ p#doc-type{
     display: flex;
     align-items: center;
     cursor: pointer;
+    position: relative;
 }
 
 .container-bottom-div > p{
@@ -407,6 +419,46 @@ p#doc-type{
 
 .container-bottom-div:hover{
     background-color: rgba(0, 0, 0, 0.07);
+}
+
+.file-drop-down{
+    width: 300px;
+    height: fit-content;
+    padding: 10px 2px;
+    background-color: white;
+    box-shadow: 0 3px 10px lightgray;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    z-index: 5;
+}
+
+.file-drop-down-option{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.file-drop-down-option:hover{
+    background-color: rgb(218, 220, 224);
+}
+
+#sub-menu-arrow{
+    font-size: 9px;
+}
+
+.sub-menu-icon{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sub-menu-icon > p{
+    font-size: 14px;
 }
 
 

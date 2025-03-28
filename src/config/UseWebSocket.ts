@@ -25,6 +25,7 @@ const useSocket = () => {
 
         userSocket.on("message", (data: string) => {
             setMessages(data);
+            
         });
 
         userSocket.on("typing", (user)=>{

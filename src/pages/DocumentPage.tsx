@@ -43,7 +43,7 @@ const DocumentPage = () => {
     if(user) {
       const decode: UserDecode = jwtDecode(user);
       userID = decode.id;
-    }else{navigate('/login')}
+    }
   },[]);
 
   useEffect(()=>{

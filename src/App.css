@@ -353,6 +353,8 @@ p#doc-type{
     height: 45%;
     /* background-color: yellow; */
     display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .doc-name{

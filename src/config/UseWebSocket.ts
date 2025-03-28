@@ -3,6 +3,7 @@ import { io, Socket } from "socket.io-client";
 
 const SOCKET_URL = "http://localhost:5000";
 export const userURL = "http://localhost:5000/api/user"
+export const authURL = "http://localhost:5000/api/auth"
 
 const useSocket = () => {
     const [socket, setSocket] = useState<Socket | null>(null);

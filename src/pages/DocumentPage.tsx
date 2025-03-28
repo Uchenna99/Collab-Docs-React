@@ -7,6 +7,10 @@ import { HiOutlineChevronUp } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import useSocket, { userURL } from "../config/UseWebSocket";
 import axios from "axios";
+import { MdOutlineStarOutline } from "react-icons/md";
+import { IoCloudDoneOutline } from "react-icons/io5";
+import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 interface SaveDTO {
   title: string;
@@ -15,25 +19,61 @@ interface SaveDTO {
 }
 
 const DocumentPage = () => {
+  const navigate = useNavigate();
   const {sendMessage, messages} = useSocket();
   const [docText, setDocText] = useState('');
   const [docTitle, setDocTitle] = useState('Untitled document');
   const [fontSize, setFontSize] = useState(16);
   const [bold, setBold] = useState(false);
   const [italic, setItalic] = useState(false);
+  const [fileMenu, setFileMenu] = useState(false);
+  const [saving, setSaving] = useState('null');
+  // const [user, setUser] = useState<UserDecode|null>(null);
 
-  const saveDoc: SaveDTO = {
-    title: docText,
-     content: docText,
-     userId: ''
+  interface UserDecode {
+    iat: number;
+    id: string;
+    name: string;
   }
+
+  let userID = '';
+  
+  useEffect(()=>{
+    const user = localStorage.getItem('collabDocsUser');
+    if(user) {
+      const decode: UserDecode = jwtDecode(user);
+      userID = decode.id;
+    }else{navigate('/login')}
+  },[]);
 
   useEffect(()=>{
     setDocText(messages);
   },[messages]);
+  
+  const saveDoc: SaveDTO = {
+    title: docTitle,
+    content: docText,
+    userId: userID
+  }
+  
 
   const handleSave = async ()=>{
-    await axios.post(`${userURL}/create-document`, )
+    setSaving('saving');
+    await axios.post(`${userURL}/create-document`, saveDoc)
+    .then(()=>{
+      setSaving('saved');
+      setTimeout(() => {
+        setSaving('null');
+        
+      }, 2000);
+    })
+    .catch(()=>{
+      setSaving('failed');
+      setTimeout(() => {
+        setSaving('null');
+        
+      }, 2000);
+    })
   };
 
 
@@ -54,15 +94,37 @@ const DocumentPage = () => {
                   />
                 </div>
 
-                <div className="online-status">
-                  <p>Working offline</p>
+                <div className="circle-hover" style={{width:30, height:30}}>
+                  <MdOutlineStarOutline />
+                </div>
+
+                {/* <div className="circle-hover" style={{width:30, height:30}}>
+                  <div className="icon-holder">
+                    <img id="menu-svg" src={svgIcons} alt="" style={{left:-590, top:-307}} />
+                  </div>
+                </div> */}
+
+                <div className="circle-hover" style={{width:30, height:30}}>
+                  <IoCloudDoneOutline />
+                </div>
+
+                <div className="online-status" style={{display: saving==='saving'? 'flex':'none'}}>
+                  <p>Saving...</p>
+                </div>
+                <div className="online-status" style={{display: saving==='saved'? 'flex':'none'}}>
+                  <p>Saved</p>
+                </div>
+                <div className="online-status" style={{display: saving==='failed'? 'flex':'none'}}>
+                  <p>Save failed</p>
                 </div>
               </div>
 
               <div className="container-bottom">
-                <div className="container-bottom-div">
+
+                <div className="container-bottom-div" onClick={()=> setFileMenu(!fileMenu)}>
                   <p>File</p>
-                  <div className="file-drop-down">
+
+                  <div className="file-drop-down" style={{display: fileMenu? 'block':'none'}}>
                     <div className="file-drop-down-option">
                       <div className="sub-menu-icon">
                         <div className="icon-holder">
@@ -70,7 +132,7 @@ const DocumentPage = () => {
                         </div>
                         <p>New</p>
                       </div>
-                      <p id="sub-menu-arrow">►</p>
+                      {/* <p id="sub-menu-arrow">►</p> */}
                     </div>
                     <div className="file-drop-down-option" onClick={handleSave}>
                       <div className="sub-menu-icon">
